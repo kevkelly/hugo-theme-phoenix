@@ -1,0 +1,9 @@
+<nav role="navigation" class="site-navigation">{{- template "navwalker" . -}}</nav>
+
+{{- define "navwalker" -}}
+    <ul role="list">
+        {{- range .Site.Menus.main.ByWeight -}}
+        <li><a href="{{- .URL | relLangURL -}}">{{- .Name -}}</a></li>
+        {{- end -}}
+    </ul>
+{{- end -}}

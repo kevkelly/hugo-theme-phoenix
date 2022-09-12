@@ -1,0 +1,9 @@
+{{- define "main" -}}
+{{- range (where .Site.RegularPages.ByPublishDate "Section" "posts").Reverse -}}
+<article>
+	<h2>{{- .Title -}}</h2>
+	<p>{{- .Date.Format "January 2006" -}}</p>
+	<p>{{- .ReadingTime -}}</p>
+</article>
+{{- end -}}
+{{- end -}}

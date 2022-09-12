@@ -1,0 +1,10 @@
+<footer class="site-footer">
+	{{- if .Site.Params.social -}}
+	<ul role="list" class="social">
+		{{- range sort .Site.Params.social "weight" -}}
+		<li><a class="{{- .name | lower -}}" href="{{- .url -}}" target="_blank" title="{{- .name -}}">{{- partial "svg.html" .name -}}</a></li>
+		{{- end -}}
+	</ul>
+	{{- end -}}
+	<p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
+</footer>

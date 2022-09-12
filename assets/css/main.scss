@@ -1,0 +1,37 @@
+@import "_reset";
+@import "_nav";
+@import "_svg";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+	font-family: 'Roboto', sans-serif;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
+	max-width: 90rem;
+	margin: auto;
+}
+
+.site-header{
+	display: grid;
+	grid-template-columns: min-content auto;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.site-main{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	grid-gap: 1rem;
+}
+
+.site-footer{
+	display: grid;
+	justify-items: center;
+	ul.social{
+		display: inline-flex;
+		column-gap: 0.5rem;
+	}
+}
+
+@import "_media";

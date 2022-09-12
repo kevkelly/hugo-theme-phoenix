@@ -1,0 +1,51 @@
+$size: 15vw;
+$max-size: 2rem;
+$darken: 10%;
+$socials: (
+    github: #383940,
+    linkedin: #007bb6,
+    reddit: transparent,
+    rss: #d95b29,
+    twitter: #55acee,
+    youtube: #cd201f
+);
+
+.social{
+    a{
+        height: $size;
+        width: $size;
+        max-height: $max-size;
+        max-width: $max-size;
+        display: block;
+    }
+    svg{
+        height: 100%;
+        width: 100%;
+        fill: white;
+    }
+}
+
+@each $social, $color in $socials{
+    .#{$social}{
+        background: $color;
+        &:focus, &:hover{
+            background: darken($color, $darken);
+        }
+
+        @if $social == 'reddit'{
+            svg{
+                stroke: #383940;
+                stroke-width: 18;
+                .reddit-eyes{
+                    fill: #f04a22;
+                    stroke-width: 0;
+                }
+                .reddit-line{
+                    fill: none;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                }
+            }
+        }
+    }
+}

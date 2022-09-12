@@ -1,0 +1,4 @@
+<header class="site-header">
+	<h1><a href="{{- .Site.BaseURL -}}">{{- index (split (urls.Parse .Site.BaseURL).Host ":") 0 -}}</a></h1>
+	{{- partial "nav.html" . -}}
+</header>
